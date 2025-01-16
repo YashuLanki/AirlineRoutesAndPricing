@@ -8,6 +8,16 @@
 
  ## Code and Resources Used
  - **Python Version:** 3.11
- - **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, pickle
- - **Dataset:** Dataset provided as part of the Udemy course "Build Data Science Real World Projects in AI, ML, NLP, and Time Series Domain"
+ - **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, pickle.
+ - **Dataset:** Dataset provided as part of the Udemy course "Build Data Science Real World Projects in AI, ML, NLP, and Time Series Domain".
+
+## Data Cleaning
+- Given the provided dataset, I needed to clean up the data so that it was usable for our model. I made the following changes and created the following variables:
+  - Converted relevant columns to datetime format to ensure proper handling of date and time information.
+  - Extracted relevant components like day, month, and year from date columns.
+  - Extracted hour and minute components from time columns.
+  - Cleaned and standardized the duration data by splitting it into separate hour and minute components and calculated the total duration in minutes.
+  - Applied one-hot encoding to categorical string features, creating binary columns for each unique category.
+  - Used target-guided encoding for certain categorical features, mapping categories to numerical values based on their frequency or a custom scheme.
+    
  
