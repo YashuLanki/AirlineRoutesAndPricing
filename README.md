@@ -29,6 +29,8 @@ I visualized the relationships between key features and the target variable, exp
 detection to better understand the data’s patterns and anomalies.
 
 ![Screenshot 2025-01-16 114720](https://github.com/user-attachments/assets/a0f9dacf-1302-420d-87ee-9fd896f03fd6)
+![Flights](https://github.com/user-attachments/assets/b81f2b31-d213-4107-b3d7-62f333b158a1)
+
 
 
     
