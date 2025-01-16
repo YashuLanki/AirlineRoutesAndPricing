@@ -28,7 +28,8 @@ Given the provided dataset, I needed to clean up the data so that it was usable 
 I visualized the relationships between key features and the target variable, explored the distribution of values across different categories, and performed outlier 
 detection to better understand the data’s patterns and anomalies.
 
-![alt](https://github.com/user-attachments/assets/535e1147-a187-478d-a0b2-f4f6b2378d69)
+![Screenshot 2025-01-16 114720](https://github.com/user-attachments/assets/a0f9dacf-1302-420d-87ee-9fd896f03fd6)
+
 
     
  
