@@ -17,7 +17,8 @@ Given the provided dataset, I needed to clean up the data so that it was usable 
   - Extracted relevant components like day, month, and year from date columns.
   - Extracted hour and minute components from time columns.
   - Cleaned and standardized the duration data by splitting it into separate hour and minute components and calculated the total duration in minutes.
-  - Applied one-hot encoding to categorical string features, creating binary columns for each unique category.
-  - Used target-guided encoding for certain categorical features, mapping categories to numerical values based on their frequency or a custom scheme.
+  - Applied one-hot encoding to categorical string features and used target-guided encoding to map categorical values to numerical values based on their relationship with the target variable.
+  - Applied label encoding to map categorical values to numerical values.
+  - Dropped original columns after extracting relevant features and removed unnecessary columns. 
     
  
