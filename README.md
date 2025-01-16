@@ -6,7 +6,7 @@
 - **Data Preprocessing**: Includes handling missing values, encoding categorical features, and scaling numerical data to improve model accuracy.
 - **Technologies Used**: Python, Pandas, Scikit-learn, Matplotlib, and other data science libraries for analysis and model building.
 
- ### Code and Resources Used
+ ## Code and Resources Used
  - **Python Version:** 3.11
  - **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, pickle
  - **Dataset:** Dataset provided as part of the Udemy course "Build Data Science Real World Projects in AI, ML, NLP, and Time Series Domain"
