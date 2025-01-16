@@ -8,7 +8,7 @@
 
  ### Code and Resources Used
  ---
- **Python Version:** 3.11
- **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, pickle
- **Dataset:** Dataset provided as part of the Udemy course "Build Data Science Real World Projects in AI, ML, NLP, and Time Series Domain"
+ - **Python Version:** 3.11
+ - **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, pickle
+ - **Dataset:** Dataset provided as part of the Udemy course "Build Data Science Real World Projects in AI, ML, NLP, and Time Series Domain"
  
