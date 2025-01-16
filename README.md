@@ -19,6 +19,11 @@ Given the provided dataset, I needed to clean up the data so that it was usable 
   - Cleaned and standardized the duration data by splitting it into separate hour and minute components and calculated the total duration in minutes.
   - Applied one-hot encoding to categorical string features and used target-guided encoding to map categorical values to numerical values based on their relationship with the target variable.
   - Applied label encoding to map categorical values to numerical values.
-  - Dropped original columns after extracting relevant features and removed unnecessary columns. 
+  - Dropped original columns after extracting relevant features and removed unnecessary columns.
+
+## EDA
+I visualized the relationships between key features and the target variable, explored the distribution of values across different categories, and performed outlier detection to better understand the data’s patterns and anomalies.
+!([Duration](https://github.com/user-attachments/assets/535e1147-a187-478d-a0b2-f4f6b2378d69))
+
     
  
