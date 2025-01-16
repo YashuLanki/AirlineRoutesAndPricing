@@ -1,4 +1,5 @@
 # Predict Fare of Airline Tickets using ML: Project Overview
+
 - **Objective**: Develop a machine learning model to predict airline ticket prices based on features like source, destination, airline, and number of stops.
   - **Dataset Features**: Includes flight details such as airline, date of journey, route, departure and arrival times, source, destination, total stops, additional info, and price.
   - **Approach**: Apply regression algorithms (e.g., Decision Trees, Random Forest) to predict ticket prices, with preprocessing like handling missing values and encoding categorical features.
@@ -7,12 +8,14 @@
   - **Technologies Used**: Python, Pandas, Scikit-learn, Matplotlib, and other data science libraries for analysis and model building.
 
  ## Code and Resources Used
+ 
  - **Python Version:** 3.11
  - **Packages:** pandas, numpy, matplotlib, seaborn, sklearn, pickle.
  - **Dataset:** Dataset provided as part of the Udemy course "Build Data Science Real World Projects in AI, ML, NLP, and Time Series Domain".
 
 ## Data Cleaning
 Given the provided dataset, I needed to clean up the data so that it was usable for our model. I made the following changes and created the following variables:
+
   - Converted relevant columns to datetime format to ensure proper handling of date and time information.
   - Extracted relevant components like day, month, and year from date columns.
   - Extracted hour and minute components from time columns.
@@ -22,8 +25,10 @@ Given the provided dataset, I needed to clean up the data so that it was usable 
   - Dropped original columns after extracting relevant features and removed unnecessary columns.
 
 ## EDA
-I visualized the relationships between key features and the target variable, explored the distribution of values across different categories, and performed outlier detection to better understand the data’s patterns and anomalies.
-!([Duration](https://github.com/user-attachments/assets/535e1147-a187-478d-a0b2-f4f6b2378d69))
+I visualized the relationships between key features and the target variable, explored the distribution of values across different categories, and performed outlier 
+detection to better understand the data’s patterns and anomalies.
+
+![alt](https://github.com/user-attachments/assets/535e1147-a187-478d-a0b2-f4f6b2378d69)
 
     
  
