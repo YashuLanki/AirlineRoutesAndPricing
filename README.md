@@ -1,4 +1,5 @@
 # Predict Fare of Airline Tickets using ML: Project Overview
+---
 - **Objective**: Develop a machine learning model to predict airline ticket prices based on features like source, destination, airline, and number of stops.
 - **Dataset**: Includes flight details such as airline, route, departure and arrival times, stops, and pricing information.
 - **Approach**: Apply regression algorithms (e.g., Decision Trees, Random Forest) to predict ticket prices, with preprocessing like handling missing values and encoding categorical features.
