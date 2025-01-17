@@ -41,5 +41,13 @@ Models:
 - **Decision Tree:** Offers a simpler model with clear interpretability, making it easier to understand how features impact the prediction, though its performance might be lower compared to Random Forest. The focus here is on comparing model metrics such as accuracy, mean absolute error, and R-squared.
 
 ## Model Performance
+The Random Forest model is the better model for predicting the price of airline ticket, offering more accurate predictions and a better overall fit for the data. 
+
+-**Random Forest:**
+  -Training Score: 0.95
+  -r2 Score: 0.81
+  -MAE: 1175.16
+  -MSE: 3668703.96
+  -RMSE: 1915.39
 
 
