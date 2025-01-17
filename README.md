@@ -31,7 +31,11 @@ detection to better understand the data’s patterns and anomalies.
 ![Screenshot 2025-01-16 114720](https://github.com/user-attachments/assets/a0f9dacf-1302-420d-87ee-9fd896f03fd6)
 ![Flights](https://github.com/user-attachments/assets/b81f2b31-d213-4107-b3d7-62f333b158a1)
 
+## Model Building
+I split the data into train and tests sets with a test size of 25%.
 
+I tried two different models and evaluated them using using metrics like Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared. I chose to use these metrics because it is relatively easy to interpret and outliers aren't particularly bad for these models. 
 
-    
- 
+Models: 
+- **Random Forest:** Provides insights into the importance of different features in predicting the target variable (Price).
+- **Decision Tree:** 
