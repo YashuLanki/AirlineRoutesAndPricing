@@ -55,4 +55,7 @@ The Random Forest model is the better model for predicting the price of airline 
   - MAE: 1423.02
   - MSE: 6348160.96
   - RMSE: 2519.55
+ 
+  ## Hypertune ML model
+  In this part, I optimized the performance of the Random Forest model by tuning its hyperparameters to improve prediction accuracy using a randomized search approach.
 
