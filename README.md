@@ -43,11 +43,16 @@ Models:
 ## Model Performance
 The Random Forest model is the better model for predicting the price of airline ticket, offering more accurate predictions and a better overall fit for the data. 
 
--**Random Forest:**
+- **Random Forest:**
   - Training Score: 0.95
   - r2 Score: 0.81
   - MAE: 1175.16
   - MSE: 3668703.96
   - RMSE: 1915.39
-
+- **Decision Tree:**
+  - Training Score: 0.96
+  - r2 Score: 0.67
+  - MAE: 1423.02
+  - MSE: 6348160.96
+  - RMSE: 2519.55
 
