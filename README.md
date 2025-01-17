@@ -38,4 +38,8 @@ I tried two different models and evaluated them using using metrics like Mean Ab
 
 Models: 
 - **Random Forest:** Provides insights into the importance of different features in predicting the target variable (Price).
-- **Decision Tree:** 
+- **Decision Tree:** Offers a simpler model with clear interpretability, making it easier to understand how features impact the prediction, though its performance might be lower compared to Random Forest. The focus here is on comparing model metrics such as accuracy, mean absolute error, and R-squared.
+
+## Model Performance
+
+
