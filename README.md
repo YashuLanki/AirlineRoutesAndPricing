@@ -28,8 +28,8 @@ Given the provided dataset, I needed to clean up the data so that it was usable 
 I visualized the relationships between key features and the target variable, explored the distribution of values across different categories, and performed outlier 
 detection to better understand the data’s patterns and anomalies.
 
-![Screenshot 2025-01-16 114720](https://github.com/user-attachments/assets/a0f9dacf-1302-420d-87ee-9fd896f03fd6)
-![Flights](https://github.com/user-attachments/assets/b81f2b31-d213-4107-b3d7-62f333b158a1)
+<img src="https://github.com/user-attachments/assets/591602d7-ed55-4c9c-8da6-0dbc82351110" alt="Screenshot 2025-01-16 114720" width="300"/>
+<img src="https://github.com/user-attachments/github.com/user-attachments/assets/a0f9dacf-1302-420d-87ee-9fd896f03fd6assets/b81f2b31-d213-4107-b3d7-62f333b158a1" alt="Flights" width="200/>
 
 ## Model Building
 I split the data into train and tests sets with a test size of 25%.
