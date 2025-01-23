@@ -46,15 +46,15 @@ The Random Forest model is the better model for predicting the price of airline 
 - **Random Forest:**
   - Training Score: 0.95
   - r2 Score: 0.81
-  - MAE: 1175.16
-  - MSE: 3668703.96
-  - RMSE: 1915.39
+  - MAE: 1188.58
+  - MSE: 3766408.75
+  - RMSE: 1940.72
 - **Decision Tree:**
   - Training Score: 0.96
-  - r2 Score: 0.67
-  - MAE: 1423.02
-  - MSE: 6348160.96
-  - RMSE: 2519.55
+  - r2 Score: 0.70
+  - MAE: 1385.70
+  - MSE: 6047130.41
+  - RMSE: 2459.10
  
   ## Hypertune ML model
   In this part, I optimized the performance of the Random Forest model by tuning its hyperparameters to improve prediction accuracy using a randomized search approach.
