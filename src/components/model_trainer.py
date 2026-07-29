@@ -1,13 +1,15 @@
-from sklearn.model_selection import train_test_split
-from sklearn import metrics 
-from sklearn.model_selection import RandomizedSearchCV
+import os
+import sys
+from dataclasses import dataclass
+
+from sklearn.metrics import r2_score
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
 
 from src.exception import CustomException
 from src.logger import logging
 
-from src.utils import save_object
+from src.utils import save_object, evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
@@ -20,7 +22,7 @@ class ModelTrainer:
     def initiate_model_trainer(self,train_array,test_array,preprocessor_path):
         try:
             logging.info("Split training and test input data")
-            X_train,y_train,X_test,X_train=(
+            X_train,y_train,X_test,y_test=(
                 train_array[:,:-1],
                 train_array[:,-1],
                 test_array[:,:-1],
@@ -28,27 +30,22 @@ class ModelTrainer:
             )
             models = {
              "Random Forest": RandomForestRegressor(),
-             "Decision Tree": DecisionTreeRegressor(),   
+             "Decision Tree": DecisionTreeRegressor(),
             }
             params={
                 "Decision Tree": {
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                    # 'splitter':['best','random'],
-                    # 'max_features':['sqrt','log2'],
                 },
                 "Random Forest":{
-                    # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                 
-                    # 'max_features':['sqrt','log2',None],
                     'n_estimators': [8,16,32,64,128,256]
-                } 
+                }
             }
 
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
                                              models=models,param=params)
-            
+
             ## To get best model score from dict
-            best_model_score = max(sorted(model_report.values()))
+            best_model_score = max(model_report.values())
 
             ## To get best model name from dict
 
@@ -58,7 +55,7 @@ class ModelTrainer:
             best_model = models[best_model_name]
 
             if best_model_score<0.6:
-                raise CustomException("No best model found")
+                raise CustomException("No best model found", sys)
             logging.info(f"Best found model on both training and testing dataset")
 
             save_object(

@@ -17,10 +17,10 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-name='mlproject',
-version='0.0.1',
-author='Krish',
-author_email='krishnaik06@gmail.com',
+name='airline-fare-predictor',
+version='0.1.0',
+author='Yashu Lanki',
+author_email='171519423+YashuLanki@users.noreply.github.com',
 packages=find_packages(),
 install_requires=get_requirements('requirements.txt')
 

@@ -110,6 +110,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Generated training artifacts (rerun tools/train_model.py to regenerate)
+artifacts/
+
 # Spyder project settings
 .spyderproject
 .spyproject

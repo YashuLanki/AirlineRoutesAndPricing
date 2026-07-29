@@ -12,11 +12,11 @@ from src.exception import CustomException
 from src.logger import logging
 import os
 
-from src.utils import save_object
+from src.utils import save_object, engineer_features
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -28,7 +28,7 @@ class DataTransformation:
         
         '''
         try:
-            numerical_columns = ['Date_of_Journey',
+            numerical_columns = [
                 'Journey_Day',
                 'Journey_Month',
                 'Journey_Year',
@@ -38,15 +38,13 @@ class DataTransformation:
                 'Arrival_Time_minute',
                 'Duration_hours',
                 'Duration_mins',
-                'Duration_total_mins'
+                'Duration_total_mins',
+                'Total_Stops',
             ]
             categorical_columns = [
                 "Airline",
                 "Source",
                 "Destination",
-                "Route",
-                "Duration",
-                "Total_Stops",
                 "Additional_Info"
             ]
 
@@ -62,7 +60,7 @@ class DataTransformation:
 
                 steps=[
                 ("imputer",SimpleImputer(strategy="most_frequent")),
-                ("one_hot_encoder",OneHotEncoder()),
+                ("one_hot_encoder",OneHotEncoder(handle_unknown="ignore")),
                 ("scaler",StandardScaler(with_mean=False))
                 ]
 
@@ -94,22 +92,14 @@ class DataTransformation:
 
             logging.info("Read train and test data completed")
 
+            train_df = engineer_features(train_df)
+            test_df = engineer_features(test_df)
+
             logging.info("Obtaining preprocessing object")
 
             preprocessing_obj=self.get_data_transformer_object()
 
-            target_column_name="price"
-            numerical_columns = ['Date_of_Journey',
-                'Journey_Day',
-                'Journey_Month',
-                'Journey_Year',
-                'Dep_Time_hour',
-                'Dep_Time_minute',
-                'Arrival_Time_hour',
-                'Arrival_Time_minute',
-                'Duration_hours',
-                'Duration_mins',
-                'Duration_total_mins']
+            target_column_name="Price"
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
