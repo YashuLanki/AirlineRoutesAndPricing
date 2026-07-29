@@ -17,7 +17,7 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-name='airline-fare-predictor',
+name='honolulu-majuro-fare-predictor',
 version='0.1.0',
 author='Yashu Lanki',
 author_email='171519423+YashuLanki@users.noreply.github.com',

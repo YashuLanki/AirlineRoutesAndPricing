@@ -1,11 +1,10 @@
-"""Personal case study: Honolulu (HNL) <-> Majuro (MAJ) round-trip fares.
+"""Honolulu (HNL) <-> Majuro (MAJ) round-trip fare predictor.
 
-Unlike the main pipeline (src/components/*.py), which trains on the
-thousands-of-rows Kaggle dataset of Indian domestic routes, this is a small,
-honestly-scoped side project: United is the *only* carrier on this route (part
-of its twice-weekly "Island Hopper" service), so there's no Airline/Source/
-Destination/Stops variety to model - the real driver of price here is how far
-in advance you book and which days of the week you fly.
+United is the *only* carrier on this route (part of its twice-weekly "Island
+Hopper" service), so there's no Airline/Source/Destination/Stops variety to
+model - the real driver of price here is how far in advance you book and
+which days of the week you fly. That's a deliberately small, honestly-scoped
+model, not a simplified version of something bigger.
 
 The dataset (notebook/data/hawaii_marshall_islands.csv) is 38 REAL fares
 retrieved from Google Flights on 2026-07-29 - not scraped in bulk (this route's
@@ -13,7 +12,7 @@ own booking site/OTAs block that), but read directly off Google Flights' date-gr
 view across two booking windows (~1 week out and ~14-16 weeks out) in one
 session. With n=38 and only two real booking-window clusters in the data, this
 is a small, illustrative regression, not a production-grade model - see the
-"Personal case study" section of the README for the full caveat.
+README for the full caveat.
 """
 import sys
 from datetime import date

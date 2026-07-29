@@ -1,14 +1,13 @@
-# Workflow: Predict a Honolulu <-> Majuro Fare (Personal Case Study)
+# Workflow: Predict a Honolulu <-> Majuro Fare
 
 ## Objective
-Predict the round-trip fare for United's Honolulu (HNL) <-> Majuro (MAJ) route
-— a personal case study, separate from the main multi-city model.
+Predict the round-trip fare for United's Honolulu (HNL) <-> Majuro (MAJ) route.
 
-## Why this is a separate, smaller pipeline
+## Why the model is this small
 United is the only carrier on this route (part of its twice-weekly "Island
 Hopper" service), so there's no Airline/Source/Destination/Stops variety to
-learn from — unlike the main project. The real driver of price here is how
-far in advance you book and which days of the week you fly.
+learn from. The real driver of price here is how far in advance you book and
+which days of the week you fly.
 
 ## Data source
 `notebook/data/hawaii_marshall_islands.csv` — 38 **real** fares read from
