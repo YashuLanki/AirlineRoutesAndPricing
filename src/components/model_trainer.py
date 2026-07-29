@@ -1,3 +1,4 @@
+import json
 import os
 import sys
 from dataclasses import dataclass
@@ -14,6 +15,7 @@ from src.utils import save_object, evaluate_models
 @dataclass
 class ModelTrainerConfig:
     trained_model_file_path=os.path.join("artifacts","model.pkl")
+    metrics_file_path=os.path.join("artifacts","metrics.json")
 
 class ModelTrainer:
     def __init__(self):
@@ -66,6 +68,10 @@ class ModelTrainer:
             predicted=best_model.predict(X_test)
 
             r2_square = r2_score(y_test, predicted)
+
+            with open(self.model_trainer_config.metrics_file_path, "w") as f:
+                json.dump({"best_model": best_model_name, "r2_score": r2_square}, f, indent=2)
+
             return r2_square
             
             

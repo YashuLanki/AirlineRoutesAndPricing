@@ -43,6 +43,16 @@ See [`workflows/train_model.md`](workflows/train_model.md) and
 [`workflows/predict_fare.md`](workflows/predict_fare.md) for the full input
 spec, expected output, and known edge cases for each tool.
 
+### Web demo
+
+`app.py` is a Streamlit UI over the same `predict_pipeline.py` used by the CLI
+tool above — dropdowns/date pickers for flight details, a "Train model now"
+button if no model exists yet, and the current model's test R² shown at the top.
+
+```bash
+streamlit run app.py
+```
+
  ## Code and Resources Used
  
  - **Python Version:** 3.11
