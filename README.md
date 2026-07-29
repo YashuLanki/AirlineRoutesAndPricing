@@ -107,3 +107,43 @@ These numbers come directly from running `python tools/train_model.py` against t
 ## Hypertune ML model
 `src/components/model_trainer.py` hypertunes both models via `GridSearchCV` (see `src/utils.py::evaluate_models`) over a small parameter grid — `n_estimators` for Random Forest and `criterion` for Decision Tree — then keeps whichever model scores higher on the held-out test set.
 
+## Personal case study: Honolulu ↔ Majuro
+
+The main model above is trained on the Kaggle Indian-domestic-flights dataset,
+which has plenty of airlines, cities, and stops to learn from. As a personal
+extension, `src/pipeline/hawaii_case_study.py` predicts round-trip fares for
+one specific route I care about: Honolulu (HNL) to Majuro, Marshall Islands (MAJ).
+
+**Why it's a separate, smaller pipeline, not just new categories in the main
+model:** United is the *only* carrier on this route (part of its twice-weekly
+"Island Hopper" service — the same flight continues on to Kwajalein, Kosrae,
+Pohnpei, Chuuk, and Guam). There's no Airline/Source/Destination/Stops variety
+to one-hot encode. The real driver of price here is how far in advance you
+book and which day of the week you fly.
+
+**Data**: `notebook/data/hawaii_marshall_islands.csv` — 38 real fares read
+directly from Google Flights' date-grid view on 2026-07-29, across two booking
+windows (~1 week out and ~14-16 weeks out from that date). This is **not** a
+scraped historical dataset (this route's booking channels don't expose one,
+and bulk-scraping live pricing sites isn't something this project does) — it's
+a single point-in-time snapshot, read by hand from one legitimate browsing
+session. With n=38 and only two real booking-window clusters, this is a small,
+illustrative regression (Linear Regression on days-until-departure,
+departure/return day-of-week, and trip length), not a production-grade
+forecasting model. A quick sanity check bears this out: predicting the exact
+dates of a real quote in the dataset (Aug 5 → Aug 12, 2026) comes back at
+$2,721 against an actual quoted price of $2,716 — but predictions for dates
+between or beyond the two observed windows are extrapolations and should be
+treated with more skepticism.
+
+Also genuinely interesting: because Majuro is across the International Date
+Line from Honolulu, this ~5.5 hour nonstop flight lands the *next calendar
+day* local time.
+
+```bash
+python tools/predict_hawaii_fare.py --departure-date 15/11/2026 --return-date 22/11/2026
+```
+
+Or use the "🌺 Honolulu → Majuro" tab in the Streamlit app. See
+[`workflows/predict_hawaii_fare.md`](workflows/predict_hawaii_fare.md) for details.
+
